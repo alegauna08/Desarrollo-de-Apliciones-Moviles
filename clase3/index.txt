@@ -1,0 +1,40 @@
+ASINCRONIA
+    El concepto: Mandás un pedido (ej. pedir una lista de contactos) y JS sigue ejecutando el resto de codigo.
+Cuando la respuesta llega, se ejecuta un "callback" o se resuelve una "promesa".
+
+    Promesas: Un objeto que representa un valor que puede estar disponible ahora, en el futuro o nunca.
+Tiene tres estados: Pending, fulfilled (completada) o rejacted.
+
+ejemplo:
+const URLAPI = "https://jsonplaceholder.typecode.com/todos/1"
+
+//usando fetch tradicionnal
+fetch(URLAPI)
+    .then(response => response.JSON())
+    .then(response => console.log(response))
+    .catch(error => console.log(error))
+
+//usando try catch
+const obtenerData = async () => {
+    try {
+        const response = await fetch(URLAPI)
+        const dataFinal = await response.json()
+        console.log(dataFinal)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+obtenerData ()
+
+function renderData (apiResponse){
+    apiResponse.forEach(element => {
+        const toInsert = document.createElement("section")
+        toInsert.innerHTML = `<article class= 'algo'>
+            <h1>${element.title}</h1>
+            <p>${element.completed}</p>
+        </article>`
+        toInsert.classList.add("otra")  //sirve para agregarle clases al padre
+        document.body.append(toInsert)
+    });
+}
