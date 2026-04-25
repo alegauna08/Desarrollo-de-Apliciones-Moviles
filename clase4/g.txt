@@ -1,0 +1,24 @@
+Modulos (import/export)
+En el desarrollo web/movil, la organizacion es importante. 
+JavaScript nos permite dividir la logica en piezas reutilizables.
+
+Tipos de Export/import
+a- Export Nombrado (Named Export)
+se usa cuando un archivo tiene muchas funcionesde utilidad.
+
+//utils.js
+export const sumar = (a, b) => a + b,
+export const restar = (a, b) => a - b;
+
+//app.js
+import {sumar, restar} from './utils.js';
+
+b- Export por Defecto (Default Export)
+Se usa cuando el archivo exporta una sola cosa principal (como un Componente en React).
+
+//Service.js
+const API_URL = "https://api.com"
+export default API_URL;
+
+//app.js
+import miURL from './Service.js'; //El nombre lo elegis vos al importar
