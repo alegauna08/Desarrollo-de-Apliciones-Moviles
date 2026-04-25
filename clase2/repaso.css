@@ -1,0 +1,17 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(blue, red);
+    color: whitesmoke;
+    background-color: rgb(255, 187, 187);
+}
+form{
+    display: flex;
+    flex-direction: column;
+    font-size: 35px;
+}
+#user, #password, button {
+   font-size: 30px;
+}
