@@ -28,13 +28,23 @@
   text-align: center;
   font-size: 25px;
   color: green;
+  margin: 10px,
 }
 
 .btnEliminar{
   padding: 10px;
   text-align: center;
+  margin: 10px;
   font-size: 25px;
   color: crimson;
+}
+
+.completado{
+  padding: 10px;
+  text-align: center;
+  margin: 10px;
+  font-size: 25px;
+  color: blue;
 }
 
 .task{
